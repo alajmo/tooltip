@@ -1,0 +1,108 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  background: #cae2da;
+  font-family: verdana;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  margin-top: 130px;
+  margin-bottom: 50px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  padding: 30px;
+  color: #fff;
+  background: #3498db;
+  border-radius: 5px;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Tooltip */
+.tooltip {
+  width: 100px;
+  height: 100px;
+  padding: 30px;
+  z-index: 9999;
+
+  background-color: #000;
+  transition: all 0.15s ease-out;
+}
+
+.anim.ng-enter,
+.anim.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+.anim.ng-enter,
+.anim.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.anim.ng-leave,
+.anim.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.tooltip.ng-enter.ng-enter-active,
+.tooltip.ng-leave {
+  transition: all 0.15s ease-out;
+}
+
+.tooltip.margin-right {
+  margin-left: -20px;
+}
+.tooltip.margin-bottom {
+  margin-top: -20px;
+}
+.tooltip.tooltip-1 {
+  width: 200px;
+  height: 40px;
+}
+.tooltip.tooltip-4 {
+  width: 200px;
+  height: 40px;
+  opacity: 1;
+}
+
+
+/* Arrows */
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #000;
+
+  position: absolute;
+  bottom: -10px;
+  right: 45%;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: -20px solid transparent;
+  border-left: 20px solid #000;
+
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+}
