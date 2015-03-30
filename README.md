@@ -1,6 +1,6 @@
 # ng-tooltip
 
-Simple light tooltip, only 1.6kb.
+Simple light tooltip for Angular.js, only 1.6kb.
 * no external dependency (except for Angular)
 * highly customizeable, you decide: classes/templates/animation/exact placement
 

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app', ['ngTooltip', 'ngAnimate'])
+    angular.module('app', ['tooltip.module', 'ngAnimate'])
     .run(function($templateCache, $http){
     })
     .controller('mainCtrl', function($scope){
@@ -14,9 +14,6 @@
                             'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.<div class=""></div>'+
                          '</div>';
 
-            $scope.tpl3 = '<div class="tooltip anim">'+
-                            'Tooltip'+
-                         '</div>';
     });
 
 }());

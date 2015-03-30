@@ -1,15 +1,12 @@
 /* Tooltip */
-.tooltip {
-  width: 400px;
-  height: 80px;
-  z-index: 9999;
-  color: #FFFFFF;
-  background-color: #000;
-  text-align: center;
-  line-height: 80px;
+.tp-tooltip {
+  font-size: 30px;
+  background-color: #f9f9f9;
+  padding: 30px;
   vertical-align: middle;
+  z-index: 9999;
 }
-.tooltip-half-width {
+.tp-tooltip-half-width {
   width: 200px;
 }
 .margin-top {
@@ -33,7 +30,6 @@
   background-color: #f9f9f9;
   border: 1px solid #ccc;
 }
-
 /* Animations */
 .anim.ng-enter,
 .anim.ng-leave {
@@ -50,17 +46,6 @@
 }
 .tooltip.ng-enter.ng-enter-active,
 .tooltip.ng-leave {
-  transition: all 0.15s ease-out;
-}
-
-/* Arrow styling */
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #000;
-  position: absolute;
-  bottom: -10px;
-  right: 45%;
+  -webkit-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }

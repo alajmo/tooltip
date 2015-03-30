@@ -4,12 +4,12 @@ describe('tpTooltip', function () {
   var elem,
     scope;
 
-  beforeEach(angular.mock.module('ngTooltip'));
+  beforeEach(angular.mock.module('tooltip.module'));
 
   beforeEach(inject(function ($compile, $rootScope) {
     scope = $rootScope.$new();
-    var tpl = '<div class="item" tp-tooltip tp-class="tooltip"'+
-      'tp-text="Hello!" tp-action="hover"></div>';
+    var tpl = '<div class="item" tooltip tp-class="tooltip"'+
+      'tp-text="Hello!" tp-trigger-on="hover"></div>';
 
     elem = angular.element(tpl);
     $compile(elem)(scope);

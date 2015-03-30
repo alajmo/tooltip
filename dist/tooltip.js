@@ -1,7 +1,13 @@
+/**
+ * tooltip - Light, customizable tooltip/popup for AngularJS
+ * @version 0.1.0
+ * @link http://github.com/jedanput/ngTooltip
+ * @license (c) 2015 MIT License
+ */
 (function (angular) {
   'use strict';
 
-  angular.module('ngTooltip', [])
+  angular.module('tooltip.module', [])
     .service('positionService', function ($window) {
       return {
         setPosition: function (tooltip, x, y, aX, aY, rect) {
@@ -26,10 +32,10 @@
         }
       };
     })
-    .directive('tpTooltip', function ($document, $compile, $timeout, $animate,
+    .directive('tooltip', function ($document, $compile, $timeout, $animate,
       positionService) {
       return {
-        restrict : 'AE',
+        restrict : 'EA',
         scope: {},
         link: function (scope, elem, attrs) {
           // all attr @params are strings by default
