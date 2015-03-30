@@ -1,4 +1,4 @@
-# Tooltip for Angular.js
+# light and customizable Angular tooltip
 
 Simple light tooltip for Angular.js, only 1.6kb.
 * no external dependency (except for Angular)
