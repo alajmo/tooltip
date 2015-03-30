@@ -15,7 +15,7 @@ var gulp = require('gulp'),
   connect = require('gulp-connect'),
   protractor      = require('gulp-protractor').protractor,
   webdriver       = require('gulp-protractor').webdriver,
-  webdriverUpdate = require('gulp-protractor  ').webdriver_update,
+  webdriverUpdate = require('gulp-protractor').webdriver_update,
   pkg,
   banner,
   moduleName = 'tooltip';
