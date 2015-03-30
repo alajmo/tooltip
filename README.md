@@ -29,20 +29,24 @@ Make sure you include ngAnimate if you want animation and add the appropiate cla
 ## Basic Usage
 
 Anchor is the position of the popup/tooltip, where you will attach it to the
-parent element. Orientation of x- and y axis is top to bottom and left to right.
+parent element in percent. Orientation of x- and y axis is top to bottom and left to right.
+For instance, if you want to attach the southwest corner of the tooltip to the north east corner,
+of the parent, you'd type in tp-x="100", tp-y="0" and tp-anchor-x="0", tp-anchor-y="100".
+
+Default values are shown below:
 
 ```bash
 <selector   tp-tooltip <!-- adds the directive -->
-            tp-x=""  <!-- x value of selector, from 0 - 100 -->
-            tp-y=""  <!-- y value of selector, from 0 - 100 -->
-            tp-anchor-x=""  <!-- x value of tooltip, from 0 - 100 -->
-            tp-anchor-y=""  <!-- y value of tooltip, from 0 - 100 -->
-            tp-delay=""  <!-- number of milliseconds before showing tooltip -->
+            tp-x="50"  <!-- x value of selector, from 0 - 100 -->
+            tp-y="50"  <!-- y value of selector, from 0 - 100 -->
+            tp-anchor-x="50"  <!-- x value of tooltip, from 0 - 100 -->
+            tp-anchor-y="50"  <!-- y value of tooltip, from 0 - 100 -->
+            tp-delay="100"  <!-- number of milliseconds before showing tooltip -->
             tp-template=""  <!-- input custom template -->
             tp-class=""  <!-- input custom class -->
             tp-text=""  <!-- text to display on tooltip -->
-            tp-trigger-on=""  <!-- trigger tooltip on click or hover -->
-            tp-animate="">  <!-- set true if you want animation -->
+            tp-trigger-on="hover"  <!-- trigger tooltip on click or hover -->
+            tp-animate="false">  <!-- set true if you want animation -->
 </selector>
 ```
 
