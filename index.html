@@ -1,27 +1,25 @@
 <!doctype html>
 <html>
 <head >
-  <title>ng-tooltip</title>
+  <title>Tooltip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link type="text/css" rel="stylesheet" href="demo.css"></link>
-  <link type="text/css" rel="stylesheet" href="ng-tooltip.css"></link>
   <link type="text/css" rel="stylesheet" href="default.css"></link>
-
+  <link type="text/css" rel="stylesheet" href="demo.css"></link>
+  <link type="text/css" rel="stylesheet" href="tooltip.css"></link>
 </head>
 
 <body ng-app="app" ng-controller="mainCtrl">
 
   <h1>Examples</h1>
 
-
   <!--  First -->
   <h2>Basic</h2>
   <div class="container">
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="0" tp-y="100"
      tp-anchor-x="0" tp-anchor-y="0"
-     tp-class="tooltip"
+     tp-class="tp-tooltip"
      tp-text="Hello!"
      tp-trigger="hover">
 
@@ -29,11 +27,11 @@
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="0" tp-y="100"
                          tp-anchor-x="0" tp-anchor-y="0"
-                         tp-class="tooltip"
+                         tp-class="tp-tooltip"
                          tp-text="Hello world!"
                          tp-trigger-on="hover">
       Hover over me!
@@ -42,13 +40,12 @@
   </div>
 
 
-
   <!--  Second -->
   <h2>Click/Template</h2>
   <div class="container">
 
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="50" tp-y="0"
      tp-anchor-x="50" tp-anchor-y="100"
      tp-template="tpl"
@@ -58,8 +55,8 @@
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="50" tp-y="0"
                          tp-anchor-x="50" tp-anchor-y="100"
                          tp-template="{{tpl1}}"
@@ -74,8 +71,8 @@
     <h2>Animated</h2>
   <div class="container">
 
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="50" tp-y="0"
      tp-anchor-x="50" tp-anchor-y="100"
      tp-template="tpl"
@@ -85,12 +82,11 @@
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="50" tp-y="0"
                          tp-anchor-x="50" tp-anchor-y="100"
-                         tp-template="{{tpl1}}"
-                         tp-animate="true">
+                         tp-template="{{tpl1}}">
       Animated
     </div>
 
@@ -100,8 +96,8 @@
   <h2>Free positioning</h2>
   <div class="container">
 
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="0" tp-y="0"
      tp-anchor-x="0" tp-anchor-y="0"
      tp-template="tpl">
@@ -110,8 +106,8 @@
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="0" tp-y="0"
                          tp-anchor-x="0" tp-anchor-y="0"
                          tp-template="{{tpl3}}">
@@ -123,21 +119,21 @@
   <!--  Fifth -->
   <div class="container">
 
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="50" tp-y="0"
      tp-anchor-x="0" tp-anchor-y="0"
-     tp-class="tooltip tooltip-half-width">
+     tp-class="tp-tooltip tooltip-half-width">
 
        Fill half
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="50" tp-y="0"
                          tp-anchor-x="0" tp-anchor-y="0"
-                         tp-class="tooltip tooltip-half-width"
+                         tp-class="tp-tooltip tp-tooltip-half-width height80"
                          tp-text="Fill half">
       Fill half
     </div>
@@ -147,11 +143,11 @@
   <!--  Sixth -->
   <div class="container">
 
-    <pre class="item-code"><code>&lt;div class="item"
-     tp-tooltip
+    <pre class="item-code"><code>&lt;div class="tp-tooltip-parent"
+     tooltip
      tp-x="75" tp-y="25"
      tp-anchor-x="0" tp-anchor-y="100"
-     tp-class="tooltip"
+     tp-class="tp-tooltip"
      tp-trigger-on="click"
      tp-animate="true">
 
@@ -159,8 +155,8 @@
 
 &lt;/div&gt;</code></pre>
 
-    <div class="item"
-                         tp-tooltip
+    <div class="tp-tooltip-parent"
+                         tooltip
                          tp-x="75" tp-y="50"
                          tp-anchor-x="0" tp-anchor-y="100"
                          tp-template="{{tpl3}}"
@@ -174,7 +170,7 @@
   <!--  Seventh -->
   <h2>Text</h2>
   <div class="container">
-    <pre class="item-code"><code>&lt;span tp-tooltip
+    <pre class="item-code"><code>&lt;span tooltip
       tp-x="100" tp-y="0"
       tp-anchor-x="0" tp-anchor-y="0">
 
@@ -183,7 +179,7 @@
 &lt;/span&gt;</code></pre>
 
 
-    <p style="margin-right: 100px; height: 30px;" tp-tooltip
+    <p style="margin-right: 100px; height: 30px;" tooltip
           tp-x="100" tp-y="0"
           tp-anchor-x="0" tp-anchor-y="0"
           tp-template="{{tpl2}}">
@@ -195,8 +191,8 @@
   <!-- build:js -->
   <script src="angular.js"></script>
   <script src="angular-animate.js"></script>
-  <script src="ng-tooltip.js"></script>
   <script src="app.js"></script>
+  <script src="tooltip.js"></script>
   <script src="highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- endbuild -->
