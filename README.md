@@ -1,13 +1,14 @@
-## ng-tooltip
+# ng-tooltip
 
-Simple tooltip, only 1.7kb, smallest between the ones I've found for Angular. Also
+Simple light tooltip, only 1.6kb.
 * no external dependency (except for Angular)
 * highly customizeable, you decide: classes/templates/animation/exact placement
 
 Animates if ngAnimate is included, otherwise uses basic hide/remove.
 
 Tested on Chrome/Firefox. Should work on IE(run Angular < 1.3 because 1.3 doesn't support i8) and Safari as well.
-http://jedanput.github.io/ng-tooltip/
+
+## Demo
 See [Demo](http://jedanput.github.io/ng-tooltip/ "Demo")  here.
 
 ## Installation
@@ -21,69 +22,54 @@ bower install ng-tooltip --save
 Then add dependency to your app, for instance:
 
 ```bash
-angular.module('myApp', ['tooltip.module'])
+angular.module('myApp', ['ngTooltip'])
 ```
+Make sure you include ngAnimate if you want animation and add the appropiate classes. See demo for more information.
 
-### Basic Usage
-
-Include 'ngAnimate' if you want animations and add appropiate css, see demo
-page for an example. If ngAnimate is not included, it falls back to basic show/hide.
-
-#### HTML
-
-```bash
-<selector tp-placement="" tp-class="" tp-timer="" tp-tooltiptext="">Click</selector>
-```
-
-#### JS
+## Basic Usage
 
 Anchor is the position of the popup/tooltip, where you will attach it to the
 parent element. Orientation of x- and y axis is top to bottom and left to right.
 
-### Options
-
-#### Position
-
-Two inputs, placement relative to tooltip (anchor) and relative to parent.
-Both range from 0 to 100% of respective width/height.
-
-tp-x, tp-y
-    position relative to parent. Direction is top to bottom and left to right.
-
-tp-anchor-x, tp-anchor-y
-    position relative to tooltip. Direction is top to bottom and left to right.
-
-tp-mouseover-delay (default 500)
-    Number of milliseconds (ms) before tooltip is shown on hover.
-
-tp-class
-    Class(es) for the tooltip.
-
-tp-active-class (default disabled)
-    Used for animation before tooltip is removed.
-
-tp-text
-    Text to display.
-
-tp-template (default disabled)
-    HTML template to display. Takes in plain text.
+```bash
+<selector   tp-tooltip <!-- adds the directive -->
+            tp-x=""  <!-- x value of selector, from 0 - 100 -->
+            tp-y=""  <!-- y value of selector, from 0 - 100 -->
+            tp-anchor-x=""  <!-- x value of tooltip, from 0 - 100 -->
+            tp-anchor-y=""  <!-- y value of tooltip, from 0 - 100 -->
+            tp-delay=""  <!-- number of milliseconds before showing tooltip -->
+            tp-template=""  <!-- input custom template -->
+            tp-class=""  <!-- input custom class -->
+            tp-text=""  <!-- text to display on tooltip -->
+            tp-trigger-on=""  <!-- trigger tooltip on click or hover -->
+            tp-animate="">  <!-- set true if you want animation -->
+</selector>
+```
 
 ### Examples
 
 ```bash
-<button class="item" tp-placement="" tp-class="tooltip" tp-timer="100" tp-tooltip="Hello!">Click</button>
+    <div class="item"
+                         tp-tooltip
+                         tp-x="0" tp-y="100"
+                         tp-anchor-x="0" tp-anchor-y="0"
+                         tp-class="tooltip"
+                         tp-text="Hello world!"
+                         tp-trigger-on="hover">
+      Hover over me!
+    </div>
 ```
 
 ```bash
-<div class="item" tp-placement="" tp-class="tooltip" tp-timer="100" tp-tooltip="Hello!">Hover to see</div>
-```
-
-```bash
-<span class="item" tp-placement="" tp-class="tooltip" tp-timer="100" tp-tooltip="Hello!">span</span>
-```
-
-```bash
-<p class="item" tp-placement="" tp-class="tooltip" tp-timer="100" tp-tooltip="Hello!">paragraph</p>
+    <div class="item"
+                         tp-tooltip
+                         tp-x="50" tp-y="0"
+                         tp-anchor-x="50" tp-anchor-y="100"
+                         tp-template="{{template}}"
+                         tp-trigger-on="click"
+                         tp-animate="true">
+      Click!
+    </div>
 ```
 
 ## TODO
@@ -94,10 +80,7 @@ tp-template (default disabled)
 * Tests.
 
 ## Contributing
-See the [CONTRIBUTING Guidelines](https://github.com/jedanput/slush-slush-component/blob/master/CONTRIBUTING.md)
-
-## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/jedanput/slush-slush-component/issues).
+Feel free to contribute!
 
 ## License
 
