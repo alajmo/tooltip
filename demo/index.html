@@ -3,95 +3,202 @@
 <head >
   <title>ng-tooltip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link type="text/css" rel="stylesheet" href="demo.css"></link>
   <link type="text/css" rel="stylesheet" href="../src/ng-tooltip.css"></link>
+  <link type="text/css" rel="stylesheet" href="../bower_components/highlightjs/styles/idea.css"></link>
+
 </head>
 
 <body ng-app="app" ng-controller="mainCtrl">
 
-  <div class="list">
+  <h1>Examples</h1>
 
-    <div id="1" class="item"    tp-tooltip
+
+  <!--  First -->
+  <h2>Basic</h2>
+  <div class="container">
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="0" tp-y="100"
+     tp-anchor-x="0" tp-anchor-y="0"
+     tp-class="tooltip"
+     tp-text="Hello!"
+     tp-trigger="hover">
+
+       Hover over me!
+
+&lt;/div&gt;</code></pre>
+
+    <div class="item"
+                         tp-tooltip
+                         tp-x="0" tp-y="100"
+                         tp-anchor-x="0" tp-anchor-y="0"
                          tp-class="tooltip"
-                         tp-text="Hello!"
-                         tp-action="hover">
-      Basic
+                         tp-text="Hello world!"
+                         tp-trigger-on="hover">
+      Hover over me!
     </div>
 
-    <div id="2"  class="item"    tp-tooltip
+  </div>
+
+
+
+  <!--  Second -->
+  <h2>Click/Template</h2>
+  <div class="container">
+
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="50" tp-y="0"
+     tp-anchor-x="50" tp-anchor-y="100"
+     tp-template="tpl"
+     tp-trigger="click">
+
+       Click!
+
+&lt;/div&gt;</code></pre>
+
+    <div class="item"
+                         tp-tooltip
                          tp-x="50" tp-y="0"
                          tp-anchor-x="50" tp-anchor-y="100"
                          tp-template="{{tpl1}}"
-                         tp-trigger="click"
-                         tp-delay="100"
-                         tp-animate="true">
+                         tp-trigger-on="click">
       Click!
     </div>
+
   </div>
 
-  <div class="list">
-    <div id="3" class="item"    tp-tooltip
-                         tp-x="100" tp-y="0"
-                         tp-anchor-x="0" tp-anchor-y="0"
-                         tp-delay="100"
-                         tp-template="{{tpl2}}"
-                         tp-animate="true">
-      Animate!
-    </div>
 
-    <div id="4" class="item"    tp-tooltip
-                         tp-x="50" tp-y="100"
-                         tp-anchor-x="50" tp-anchor-y="100"
-                         tp-delay="0"
-                         tp-template="{{tpl3}}">
-      Center inside
-    </div>
-  </div>
+  <!--  Third -->
+    <h2>Animated</h2>
+  <div class="container">
 
-  <div id="5" class="list">
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="50" tp-y="0"
+     tp-anchor-x="50" tp-anchor-y="100"
+     tp-template="tpl"
+     tp-animate="true">
+
+       Animated!
+
+&lt;/div&gt;</code></pre>
+
     <div class="item"
                          tp-tooltip
-                         tp-x="0" tp-y="5"
-                         tp-anchor-x="100" tp-anchor-y="100"
-                         tp-delay="200"
-                         tp-template="{{tpl4}}"
+                         tp-x="50" tp-y="0"
+                         tp-anchor-x="50" tp-anchor-y="100"
+                         tp-template="{{tpl1}}"
                          tp-animate="true">
-      North West Animated
+      Animated
     </div>
 
-    <div id="6" class="item"    tp-tooltip
-                         tp-x="80" tp-y="40"
+  </div>
+
+  <!--  Fourth -->
+  <h2>Free positioning</h2>
+  <div class="container">
+
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="0" tp-y="0"
+     tp-anchor-x="0" tp-anchor-y="0"
+     tp-template="tpl">
+
+       Fill
+
+&lt;/div&gt;</code></pre>
+
+    <div class="item"
+                         tp-tooltip
+                         tp-x="0" tp-y="0"
+                         tp-anchor-x="0" tp-anchor-y="0"
+                         tp-template="{{tpl3}}">
+      Fill
+    </div>
+
+  </div>
+
+  <!--  Fifth -->
+  <div class="container">
+
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="50" tp-y="0"
+     tp-anchor-x="0" tp-anchor-y="0"
+     tp-class="tooltip tooltip-half-width">
+
+       Fill half
+
+&lt;/div&gt;</code></pre>
+
+    <div class="item"
+                         tp-tooltip
+                         tp-x="50" tp-y="0"
+                         tp-anchor-x="0" tp-anchor-y="0"
+                         tp-class="tooltip tooltip-half-width"
+                         tp-text="Fill half">
+      Fill half
+    </div>
+
+  </div>
+
+  <!--  Sixth -->
+  <div class="container">
+
+    <pre class="item-code"><code>&lt;div class="item"
+     tp-tooltip
+     tp-x="75" tp-y="25"
+     tp-anchor-x="0" tp-anchor-y="100"
+     tp-class="tooltip"
+     tp-trigger-on="click"
+     tp-animate="true">
+
+       Click
+
+&lt;/div&gt;</code></pre>
+
+    <div class="item"
+                         tp-tooltip
+                         tp-x="75" tp-y="50"
                          tp-anchor-x="0" tp-anchor-y="100"
-                         tp-delay="100"
-                         tp-template="{{tpl5}}">
-      North East inside
+                         tp-template="{{tpl3}}"
+                         tp-trigger-on="click"
+                         tp-animate="true">
+      Click
     </div>
+
   </div>
 
-  <div id="7" class="list">
-    <span    tp-tooltip
-             tp-class="tooltip"
-             tp-text="Hello!"
-             tp-action="hover">
-      Text
-    </span>
+  <!--  Seventh -->
+  <h2>Text</h2>
+  <div class="container">
+    <pre class="item-code"><code>&lt;span tp-tooltip
+      tp-x="100" tp-y="0"
+      tp-anchor-x="0" tp-anchor-y="0">
 
-    <span    tp-tooltip
-             tp-x="100" tp-y="50"
-             tp-anchor-x="0" tp-anchor-y="50"
-             tp-class="tooltip anim"
-             tp-text="Hello!"
-             tp-animate="true"
-             tp-action="hover">
-      Works on text too!
-    </span>
-  </div>
+        Hover over to see some text.
 
+&lt;/span&gt;</code></pre>
+
+
+    <p style="margin-right: 100px; height: 30px;" tp-tooltip
+          tp-x="100" tp-y="0"
+          tp-anchor-x="0" tp-anchor-y="0"
+          tp-template="{{tpl2}}">
+      Hover over to see some text.
+    </p>
+
+    </div>
 
   <!-- build:js -->
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-animate/angular-animate.js"></script>
   <script src="app.js"></script>
   <script src="../src/ng-tooltip.js"></script>
+  <script src="../bower_components/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <!-- endbuild -->
 </body>
 </html>
