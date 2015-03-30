@@ -7,8 +7,8 @@ Simple tooltip, only 1.7kb, smallest between the ones I've found for Angular. Al
 Animates if ngAnimate is included, otherwise uses basic hide/remove.
 
 Tested on Chrome/Firefox. Should work on IE(run Angular < 1.3 because 1.3 doesn't support i8) and Safari as well.
-
-See [Demo](http://example.com/ "Demo")  here.
+http://jedanput.github.io/ng-tooltip/
+See [Demo](http://jedanput.github.io/ng-tooltip/ "Demo")  here.
 
 ## Installation
 

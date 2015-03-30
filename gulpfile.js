@@ -17,35 +17,45 @@ var gulp = require('gulp'),
   webdriver       = require('gulp-protractor').webdriver,
   webdriverUpdate = require('gulp-protractor').webdriver_update,
   pkg,
-  banner;
+  banner,
+  moduleName = 'ng-tooltip';
+
+/************* Banner ********/
+pkg = require('./package.json');
+banner = ['/**',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * @version <%= pkg.version %>',
+  ' * @link <%= pkg.homepage %>',
+  ' * @license <%= pkg.license %>',
+  ' */',
+  ''].join('\n');
 
 /*********** Build ***********/
-gulp.task('default', ['clean'], function () {
-  gulp.start('app:js', 'app:css', 'app:html', 'protractor');
-});
-
 gulp.task('build', ['clean'], function () {
-  gulp.start('protractor', 'app:js', 'app:css', 'app:html');
+  gulp.start('module:js', 'module:css', 'demo:css', 'demo:html', 'protractor');
 });
 
 /********** Development ******/
-gulp.task('dev', function () {
+gulp.task('default', ['clean'], function () {
   gulp.start('watch', 'start_server');
 });
 
 /********** Watch ************/
 gulp.task('watch', function () {
 
-  gulp.watch('src/ng-tooltip.js', ['app:js']);
-  gulp.watch('demo/index.html', ['app:html']);
-  gulp.watch('src/ng-tooltip.css', ['app:css']);
+  gulp.watch('src/*.js', ['module:js']);
+  gulp.watch('src/*.css', ['module:css']);
 
-  gulp.watch(['demo/**/*', 'src/*']);
+  gulp.watch('demo/*.js', ['demo:js']);
+  gulp.watch('demo/postcss/*.css', ['demo:css']);
+
+  gulp.watch('demo/*.html', ['demo:html']);
+
 });
 
-/********** JS ************/
-gulp.task('app:js', function () {
-  return gulp.src(['src/ng-tooltip.js'])
+/******** Module JS ************/
+gulp.task('module:js', function () {
+  return gulp.src(['src/*.js'])
   .pipe(connect.reload())
   .pipe(header(banner, { pkg : pkg } ))
   .pipe(gulp.dest('dist'))
@@ -55,21 +65,37 @@ gulp.task('app:js', function () {
   .pipe(gulp.dest('dist'));
 });
 
-/********** CSS ************/
-gulp.task('app:css', function () {
-  var processors = [autoprefixer({ browsers: ['last 5 version'] })];
+/********** Module CSS *********/
+gulp.task('module:css', function () {
+  var processors = [autoprefixer()];
   return gulp.src(['src/*.css'])
+  .pipe(connect.reload())
   .pipe(postcss(processors))
-  .pipe(concat('ng-tooltip.css'))
+  .pipe(concat(moduleName + '.css'))
   .pipe(gulp.dest('dist'))
   .pipe(minifycss())
   .pipe(rename({ suffix: '.min' }))
-  .pipe(connect.reload())
   .pipe(gulp.dest('dist/'));
 });
 
+/********** Demo JS ***********/
+gulp.task('demo:js', function () {
+  return gulp.src(['demo/*.js'])
+  .pipe(connect.reload())
+  .pipe(gulp.dest('demo'));
+});
+
+/***********Demo CSS *******/
+gulp.task('demo:css', function () {
+  var processors = [autoprefixer()];
+  return gulp.src(['demo/postcss/*.css'])
+  .pipe(postcss(processors))
+  .pipe(connect.reload())
+  .pipe(gulp.dest('demo'));
+});
+
 /********** Demo Index ************/
-gulp.task('app:html', function () {
+gulp.task('demo:html', function () {
   return gulp.src('demo/index.html')
   .pipe(connect.reload())
   .pipe(htmlreplace({
@@ -77,7 +103,7 @@ gulp.task('app:html', function () {
     [
     'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js',
     'demo/app.js',
-    'src/ng-tooltip.js'
+    'src/*.js'
     ]
   }));
 });
@@ -114,7 +140,7 @@ gulp.task('protractor', ['webdriver-update', 'webdriver', 'start_server'], funct
 
 /************** Lint ***************/
 gulp.task('lint', function () {
-  return gulp.src(['src/ng-tooltip.js'])
+  return gulp.src(['src/*.js'])
   .pipe(jslint({
     global: ['angular'],
     indent: 2,
@@ -130,13 +156,3 @@ gulp.task('lint', function () {
 gulp.task('clean', function (cb) {
   del(['dist'], cb);
 });
-
-/************* Header *************/
-pkg = require('./package.json');
-banner = ['/**',
-  ' * <%= pkg.name %> - <%= pkg.description %>',
-  ' * @version <%= pkg.version %>',
-  ' * @link <%= pkg.homepage %>',
-  ' * @license <%= pkg.license %>',
-  ' */',
-  ''].join('\n');
