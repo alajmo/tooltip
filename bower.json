@@ -25,9 +25,17 @@
   },
   "ignore": [
     "**/.*",
+    ".gitignore",
+    "src",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "gulpfile.js",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG",
+    "package.json",
+    "demo"
   ]
 }
