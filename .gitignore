@@ -2,3 +2,5 @@ node_modules
 bower_components
 tooltip
 *.log
+tooltip.sublime-project
+tooltip.sublime-project.sublime-workspace

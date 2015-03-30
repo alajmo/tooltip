@@ -9,20 +9,20 @@ Animates if ngAnimate is included, otherwise uses basic hide/remove.
 Tested on Chrome/Firefox. Should work on IE(run Angular < 1.3 because 1.3 doesn't support i8) and Safari as well.
 
 ## Demo
-See [Demo](http://jedanput.github.io/ng-tooltip/ "Demo")  here.
+See [Demo](http://jedanput.github.io/tooltip/ "Demo")  here.
 
 ## Installation
 
-Either copy dist/ng-tooltip(.min).js or install through bower:
+Either copy dist/tooltip(.min).js or install through bower:
 
 ```bash
-bower install ng-tooltip --save
+bower install angular-tooltip --save
 ```
 
-Then add dependency to your app, for instance:
+Then add dependency to your app:
 
 ```bash
-angular.module('myApp', ['ngTooltip'])
+angular.module('myApp', ['tooltip.module', 'ngAnimate'])
 ```
 Make sure you include ngAnimate if you want animation and add the appropiate classes. See demo for more information.
 

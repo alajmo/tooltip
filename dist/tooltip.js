@@ -8,7 +8,7 @@
   'use strict';
 
   angular.module('tooltip.module', [])
-    .service('positionService', function ($window) {
+    .service('positionService', ['$window', function ($window) {
       return {
         setPosition: function (tooltip, x, y, aX, aY, rect) {
           // Normalize positions
@@ -31,8 +31,9 @@
           tooltip.css('top',  posGlobY + 'px');
         }
       };
-    })
-    .directive('tooltip', function ($document, $compile, $timeout, $animate,
+    }])
+    .directive('tooltip', ['$document', '$compile', '$timeout', '$animate',
+      'positionService', function ($document, $compile, $timeout, $animate,
       positionService) {
       return {
         restrict : 'EA',
@@ -152,6 +153,6 @@
           init();
         }
       };
-    });
+    }]);
 
 }(angular));

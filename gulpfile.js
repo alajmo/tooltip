@@ -58,10 +58,10 @@ gulp.task('module:js', function () {
   return gulp.src(['src/*.js'])
   .pipe(connect.reload())
   .pipe(header(banner, { pkg : pkg } ))
-  .pipe(gulp.dest('dist'))
   .pipe(ngAnnotate())
+  .pipe(gulp.dest('dist'))
+  .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
-  .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('dist'));
 });
 
