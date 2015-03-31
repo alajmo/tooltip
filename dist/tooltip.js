@@ -1,6 +1,6 @@
 /**
  * tooltip - Light, customizable tooltip/popup for AngularJS
- * @version 0.1.0
+ * @version 0.1.1
  * @link http://github.com/jedanput
  * @license (c) 2015 MIT License
  */

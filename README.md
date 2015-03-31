@@ -36,7 +36,7 @@ of the parent, you'd type in tp-x="100", tp-y="0" and tp-anchor-x="0", tp-anchor
 Default values are shown below:
 
 ```bash
-<selector   tp-tooltip <!-- adds the directive -->
+<selector   tooltip <!-- adds the directive -->
             tp-x="50"  <!-- x value of selector, from 0 - 100 -->
             tp-y="50"  <!-- y value of selector, from 0 - 100 -->
             tp-anchor-x="50"  <!-- x value of tooltip, from 0 - 100 -->
@@ -54,7 +54,7 @@ Default values are shown below:
 
 ```bash
     <div class="item"
-                         tp-tooltip
+                         tooltip
                          tp-x="0" tp-y="100"
                          tp-anchor-x="0" tp-anchor-y="0"
                          tp-class="tooltip"
@@ -66,7 +66,7 @@ Default values are shown below:
 
 ```bash
     <div class="item"
-                         tp-tooltip
+                         tooltip
                          tp-x="50" tp-y="0"
                          tp-anchor-x="50" tp-anchor-y="100"
                          tp-template="{{template}}"
