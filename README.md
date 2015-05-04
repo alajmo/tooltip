@@ -9,7 +9,7 @@ Animates if ngAnimate is included, otherwise uses basic hide/remove.
 Tested on Chrome/Firefox. Should work on IE(run Angular < 1.3 because 1.3 doesn't support i8) and Safari as well.
 
 ## Demo
-See [Demo](http://jedanput.github.io/tooltip/ "Demo")  here.
+See [Demo](http://samiralajmovic.github.io/tooltip/ "Demo")  here.
 
 ## Installation
 
@@ -90,7 +90,7 @@ Feel free to contribute!
 
 The MIT License
 
-Copyright (c) 2015, jedanput
+Copyright (c) 2015, samiralajmovic
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
