@@ -2,8 +2,8 @@
   "name": "tooltip",
   "version": "0.1.1",
   "author": "Samir Alajmovic <alajmovic.samir@gmail.com",
-  "homepage": "http://github.com/jedanput",
-  "repository": "http://github.com/jedanput/tooltip",
+  "homepage": "http://github.com/samiralajmovic",
+  "repository": "http://github.com/samiralajmovic/tooltip",
   "description": "Light, customizable tooltip/popup for AngularJS",
   "license": "(c) 2015 MIT License",
   "keywords": [
